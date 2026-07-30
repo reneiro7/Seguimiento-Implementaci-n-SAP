@@ -78,13 +78,16 @@ button{font:inherit;cursor:pointer}
 .bi-frame iframe{display:block;width:100%;height:min(90vh,1040px);min-height:620px;border:1px solid var(--line);border-radius:14px;background:#08221A} 
   .bi-card {
     background: #315D44;
-    padding: 24px;
+    padding: 0;              /* sin padding: el head llega hasta el borde */
     border-radius: 18px;
-    overflow: hidden;
+    overflow: hidden;        /* recorta el head con las esquinas redondeadas */
   }
 
   .bi-head {
-    margin-bottom: 18px;
+    margin: 0;
+    padding: 20px 24px;
+    background: #0d3122;     /* oscuro sólido, de borde a borde */
+    border-bottom: 1px solid rgba(255,255,255,.08);
   }
 
   .bi-head h2 {
@@ -94,7 +97,7 @@ button{font:inherit;cursor:pointer}
 
   .bi-head p {
     margin: 0;
-    color: #315D44;
+    color: #9fbcab;
   }
 
   .bi-frame {
@@ -104,6 +107,8 @@ button{font:inherit;cursor:pointer}
     overflow: hidden;
     background: #315D44;
     border-radius: 14px;
+    margin: 24px;            /* el aire va aquí, no en la tarjeta */
+    width: calc(100% - 48px);
   }
 
   .bi-frame iframe {
@@ -119,11 +124,17 @@ button{font:inherit;cursor:pointer}
 
   @media (max-width: 768px) {
     .bi-card {
-      padding: 16px;
+      padding: 0;
+    }
+
+    .bi-head {
+      padding: 16px 18px;
     }
 
     .bi-frame {
       aspect-ratio: 4 / 3;
+      margin: 16px;
+      width: calc(100% - 32px);
     }
   }
 .footer{display:flex;justify-content:space-between;gap:20px;padding:24px 2px 10px;color:#718579;font-size:10px;flex-wrap:wrap}
